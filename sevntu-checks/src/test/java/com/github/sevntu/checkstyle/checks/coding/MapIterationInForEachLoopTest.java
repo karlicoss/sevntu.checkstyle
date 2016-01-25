@@ -75,5 +75,19 @@ public class MapIterationInForEachLoopTest extends BaseCheckTestSupport
                 getPath("InputMapIterationInForEachLoopSkipIf.java"),
                 expected);
     }
-    
+
+    @Test
+    public final void extendsMapTest() throws Exception
+    {
+        checkConfig.addAttribute("proposeValuesUsage", "true");
+        checkConfig.addAttribute("proposeKeySetUsage", "true");
+        checkConfig.addAttribute("proposeEntrySetUsage", "true");
+
+
+        String[] expected = new String[]{"TODO"}; // not sure what the result should be but definitely not crash
+        verify(checkConfig,
+                getPath("InputMapIterationInForEachLoopExtends.java"),
+                expected);
+
+    }
 }
